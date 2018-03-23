@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ESP32 First Server</title>
+<link type="text/css" href="test.css" rel="stylesheet"/>
+</head>
+
+<body>
+
+<h1>Hello World!</h1>
+<p>
+  This is being hosted from an ESP32 running freeRTOS. Whattup.
+</p>
+<p>
+  The below bar should change an LED brightness connected to the microcontroller.
+  Try it when more than one device is connected!
+</p>
+<div class="slidecontainer">
+  <input type="range" min="0" max="100" value="0" class="slider" id="myRange">
+</div>
+<p id="test"></p>
+<p>
+  The below counter is being sent from the ESP32:
+</p>
+<p id="output"></p>
+
+<p>
+  <a href="this_page_doesnt_exist.fail">This</a> page does not exist, so the error page will appear.
+</p>
+
+<script type="text/javascript" src="test.js"></script>
+</body>
+</html>

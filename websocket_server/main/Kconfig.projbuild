@@ -1,0 +1,23 @@
+menu "Example Options"
+
+config LED_PIN
+  int "LED GPIO Pin"
+  range 0 40
+  default 2
+  help
+    GPIO Connected to LED. Many of the ESP32 development
+    boards have one connected to pin 2.
+
+config AP_SSID
+  string "Access Point SSID"
+  default "ESP32 Test"
+  help
+    Name of access point that the ESP32 creates.
+
+config AP_PSSWD
+  string "Access Point Password"
+  default "hello world"
+  help
+    Password of access point that the ESP32 creates.
+
+endmenu
