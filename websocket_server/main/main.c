@@ -84,7 +84,7 @@ static esp_err_t event_handler(void* ctx, system_event_t* event) {
     case SYSTEM_EVENT_AP_STA_GOT_IP6:
       ESP_LOGI(TAG,"Got IP6=%01x:%01x:%01x:%01x",
         event->event_info.got_ip6.ip6_info.ip.addr[0],event->event_info.got_ip6.ip6_info.ip.addr[1],
-        event->event_info.got_ip6.ip6_info.ip.addr[2],event->event_info.got_ip6.ip6_info.ip.addr[3])
+        event->event_info.got_ip6.ip6_info.ip.addr[2],event->event_info.got_ip6.ip6_info.ip.addr[3]);
       break;
     default:
       ESP_LOGI(TAG,"Unregistered event=%i",event->event_id);
