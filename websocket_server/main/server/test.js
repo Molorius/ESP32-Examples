@@ -8,9 +8,12 @@ slider.oninput = function () {
 }
 
 function sendMsg() {
-  //websocket.send("sup playa!");
   websocket.send('L50');
   console.log('Sent message to websocket');
+}
+
+function sendText(text) {
+  websocket.send("M" + text);
 }
 
 websocket.onopen = function(evt) {

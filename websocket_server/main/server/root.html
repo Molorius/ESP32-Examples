@@ -18,6 +18,10 @@
 <div class="slidecontainer">
   <input type="range" min="0" max="100" value="0" class="slider" id="myRange">
 </div>
+<form id="frm1" action="#">
+  Send text: <input type="text" name="ftext"><br>
+  <button type="button" onclick="sendText(document.getElementsByName('ftext')[0].value);">Send</button>
+</form>
 <p id="test"></p>
 <p>
   The below counter is being sent from the ESP32:

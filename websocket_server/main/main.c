@@ -193,7 +193,7 @@ void websocket_callback(uint8_t num,WEBSOCKET_TYPE_t type,char* msg,uint64_t len
       led_duty(0);
       break;
     case WEBSOCKET_TEXT:
-      if(len) {
+      if(len) { // if the message length was greater than zero
         switch(msg[0]) {
           case 'L':
             if(sscanf(msg,"L%i",&value)) {
@@ -201,6 +201,13 @@ void websocket_callback(uint8_t num,WEBSOCKET_TYPE_t type,char* msg,uint64_t len
               led_duty(value);
               ws_server_send_text_all_from_callback(msg,len); // broadcast it!
             }
+            break;
+          case 'M':
+            ESP_LOGI(TAG, "got message length %i: %s", (int)len-1, &(msg[1]));
+            break;
+          default:
+	          ESP_LOGI(TAG, "got an unknown message with length %i", (int)len);
+	          break;
         }
       }
       break;
