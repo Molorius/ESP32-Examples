@@ -1,0 +1,48 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "idf.py",
+            "args": [
+                "build"
+            ],
+            "group": "build",
+            "presentation": {
+                // Reveal the output only if unrecognized errors occur.
+                "reveal": "always"
+            },
+            // Use the standard MS compiler pattern to detect errors, warnings and infos
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "flash",
+            "type": "shell",
+            "command": "idf.py",
+            "args": [
+                "flash"
+            ],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "openocd",
+            "type": "shell",
+            "isBackground": true,
+            "command": "openocd -f interface/ftdi/esp32_devkitj_v1.cfg -f board/esp-wroom-32.cfg",
+            "args": [
+            ]
+        }
+    ]
+}
